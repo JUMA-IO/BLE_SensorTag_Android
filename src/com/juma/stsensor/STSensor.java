@@ -147,9 +147,9 @@ public class STSensor extends Activity {
 							pb9.setProgress(z/100+20);
 							break;
 						case 0x05:
-							tv10.setText(""+(double)x/100+"rad/s");
-							tv11.setText(""+(double)y/100+"rad/s");
-							tv12.setText(""+(double)z/100+"rad/s");
+							tv10.setText(""+(double)x/100+"mdps");
+							tv11.setText(""+(double)y/100+"mdps");
+							tv12.setText(""+(double)z/100+"mdps");
 							pb10.setProgress(x/100+500);
 							pb11.setProgress(y/100+500);
 							pb12.setProgress(z/100+500);
