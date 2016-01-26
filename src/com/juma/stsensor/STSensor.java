@@ -28,7 +28,7 @@ public class STSensor extends Activity {
 	private ProgressBar pb1,pb2,pb3,pb4,pb5,pb6,pb7,pb8,pb9,pb10,pb11,pb12;  
 	private ScanHelper scanner;
 	private JumaDevice myDevice;
-	private boolean cge = true;
+	private boolean canReceive = true;
 	private HashMap<UUID, JumaDevice> deviceList =  new HashMap<UUID, JumaDevice>();
 	public static final String ACTION_DEVICE_DISCOVERED = "com.example.temperaturegatheringdemo.ACTION_DEVICE_DISCOVERED";
 	
@@ -85,9 +85,8 @@ public class STSensor extends Activity {
 		public void onReceive(byte type, byte[] message) {
 			// TODO Auto-generated method stub
 			super.onReceive(type, message);
-			if(cge){
-				cge = false;
-
+			if(canReceive){
+				canReceive = false;
 				x = 0;
 				y = 0;
 				z = 0;
@@ -156,7 +155,7 @@ public class STSensor extends Activity {
 							pb12.setProgress(z/100+500);
 							break;
 						}
-						cge = true;
+						canReceive = true;
 					}
 				});
 			}
