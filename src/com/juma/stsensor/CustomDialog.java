@@ -172,7 +172,7 @@ public class CustomDialog extends Dialog implements android.view.View.OnClickLis
 
 		}
 	};
-	private boolean adddevice = true;
+	private boolean addDevice = true;
 	private void addDeviceInfo(String name, String uuid, int rssi){
 
 		if(deviceInfo != null && lvDeviceAdapter != null){
@@ -185,14 +185,14 @@ public class CustomDialog extends Dialog implements android.view.View.OnClickLis
 				if(deviceInfo.get(i).get("uuid").equals(map.get("uuid"))){
 					deviceInfo.add(i+1, map);
 					deviceInfo.remove(i);
-					adddevice = false;
+					addDevice = false;
 					break;
 				}
 			}
-			if(adddevice){
+			if(addDevice){
 			deviceInfo.add(map);
 			}
-			adddevice = true;
+			addDevice = true;
 			
 			lvDeviceAdapter.notifyDataSetChanged();
 
