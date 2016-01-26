@@ -1,5 +1,6 @@
 package com.juma.stsensor;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -13,7 +14,6 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v4.content.LocalBroadcastManager;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
@@ -21,6 +21,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.support.v4.content.LocalBroadcastManager;
 
 public class STSensor extends Activity {
 	private Button btStart;
@@ -31,6 +32,7 @@ public class STSensor extends Activity {
 	private boolean canReceive = true;
 	private HashMap<UUID, JumaDevice> deviceList =  new HashMap<UUID, JumaDevice>();
 	public static final String ACTION_DEVICE_DISCOVERED = "com.example.temperaturegatheringdemo.ACTION_DEVICE_DISCOVERED";
+	DecimalFormat df;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +62,7 @@ public class STSensor extends Activity {
 					}
 					
 				});
-			}else if(newState == JumaDevice.STATE_DISCONNECTED){
+			}else {
 				runOnUiThread(new Runnable(){
 
 					@Override
@@ -147,9 +149,9 @@ public class STSensor extends Activity {
 							pb9.setProgress(z/100+20);
 							break;
 						case 0x05:
-							tv10.setText(""+(double)x/100+"mdps");
-							tv11.setText(""+(double)y/100+"mdps");
-							tv12.setText(""+(double)z/100+"mdps");
+							tv10.setText(""+df.format((double)x/1000)+"mdps");
+							tv11.setText(""+df.format((double)y/1000)+"mdps");
+							tv12.setText(""+df.format((double)z/1000)+"mdps");
 							pb10.setProgress(x/100+500);
 							pb11.setProgress(y/100+500);
 							pb12.setProgress(z/100+500);
@@ -235,6 +237,7 @@ public class STSensor extends Activity {
 		pb11 = (ProgressBar)findViewById(R.id.pb11);
 		pb12 = (ProgressBar)findViewById(R.id.pb12);
 		btStart = (Button)findViewById(R.id.bt_start);
+		df = new DecimalFormat("######0.0");
 	}
 	
 	private void scanDevice(){
@@ -258,7 +261,7 @@ public class STSensor extends Activity {
 				// TODO Auto-generated method stub
 				
 			}
-			
+
 		});
 	}
 	@Override
