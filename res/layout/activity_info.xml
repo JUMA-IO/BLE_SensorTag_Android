@@ -439,7 +439,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/bt_click"
-                android:text="Select Devcie"
+                android:text="Select Device"
                 android:textColor="#ffffff" />
         </TableLayout>
 
