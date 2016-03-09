@@ -44,14 +44,14 @@ public class STSensor extends Activity {
 		clicked();
 		
 	}
-@Override
-protected void onStop() {
-	// TODO Auto-generated method stub
-	super.onStop();
-	if(myDevice != null && myDevice.isConnected())
-		myDevice.disconnect();
-		
-}
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		if(myDevice != null && myDevice.isConnected())
+			myDevice.disconnect();
+	}
+
 	private JumaDeviceCallback callback = new JumaDeviceCallback() {
 		@Override
 		public void onConnectionStateChange(int status, int newState) {
