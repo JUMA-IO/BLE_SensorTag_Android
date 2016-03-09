@@ -19,14 +19,14 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.support.v4.content.LocalBroadcastManager;
 
 public class STSensor extends Activity {
 	private Button btStart;
 	private TextView tv1,tv2,tv3,tv4,tv5,tv6,tv7,tv8,tv9,tv10,tv11,tv12;
-	private ProgressBar pb1,pb2,pb3,pb4,pb5,pb6,pb7,pb8,pb9,pb10,pb11,pb12;  
+	private SeekBar pb1,pb2,pb3,pb4,pb5,pb6,pb7,pb8,pb9,pb10,pb11,pb12;  
 	private ScanHelper scanner;
 	private JumaDevice myDevice;
 	private boolean canReceive = true;
@@ -44,7 +44,14 @@ public class STSensor extends Activity {
 		clicked();
 		
 	}
-
+@Override
+protected void onStop() {
+	// TODO Auto-generated method stub
+	super.onStop();
+	if(myDevice != null && myDevice.isConnected())
+		myDevice.disconnect();
+		
+}
 	private JumaDeviceCallback callback = new JumaDeviceCallback() {
 		@Override
 		public void onConnectionStateChange(int status, int newState) {
@@ -72,7 +79,7 @@ public class STSensor extends Activity {
 						btStart.setBackgroundResource(R.drawable.bt_click);
 						btStart.setEnabled(true);
 						TextView[]	tv = {tv1,tv2,tv3,tv4,tv5,tv6,tv7,tv8,tv9,tv10,tv11,tv12};
-						ProgressBar[] pb = {pb1,pb2,pb3,pb4,pb5,pb6,pb7,pb8,pb9,pb10,pb11,pb12};
+						SeekBar[] pb = {pb1,pb2,pb3,pb4,pb5,pb6,pb7,pb8,pb9,pb10,pb11,pb12};
 						for(int i=0;i<tv.length;i++){
 							tv[i].setText("");
 							pb[i].setProgress(0);
@@ -224,18 +231,18 @@ public class STSensor extends Activity {
 		tv10 = (TextView)findViewById(R.id.tv10);
 		tv11 = (TextView)findViewById(R.id.tv11);
 		tv12 = (TextView)findViewById(R.id.tv12);
-		pb1 = (ProgressBar)findViewById(R.id.pb1);
-		pb2 = (ProgressBar)findViewById(R.id.pb2);
-		pb3 = (ProgressBar)findViewById(R.id.pb3);
-		pb4 = (ProgressBar)findViewById(R.id.pb4);
-		pb5 = (ProgressBar)findViewById(R.id.pb5);
-		pb6 = (ProgressBar)findViewById(R.id.pb6);
-		pb7 = (ProgressBar)findViewById(R.id.pb7);
-		pb8 = (ProgressBar)findViewById(R.id.pb8);
-		pb9 = (ProgressBar)findViewById(R.id.pb9);
-		pb10 = (ProgressBar)findViewById(R.id.pb10);
-		pb11 = (ProgressBar)findViewById(R.id.pb11);
-		pb12 = (ProgressBar)findViewById(R.id.pb12);
+		pb1 = (SeekBar)findViewById(R.id.pb1);
+		pb2 = (SeekBar)findViewById(R.id.pb2);
+		pb3 = (SeekBar)findViewById(R.id.pb3);
+		pb4 = (SeekBar)findViewById(R.id.pb4);
+		pb5 = (SeekBar)findViewById(R.id.pb5);
+		pb6 = (SeekBar)findViewById(R.id.pb6);
+		pb7 = (SeekBar)findViewById(R.id.pb7);
+		pb8 = (SeekBar)findViewById(R.id.pb8);
+		pb9 = (SeekBar)findViewById(R.id.pb9);
+		pb10 = (SeekBar)findViewById(R.id.pb10);
+		pb11 = (SeekBar)findViewById(R.id.pb11);
+		pb12 = (SeekBar)findViewById(R.id.pb12);
 		btStart = (Button)findViewById(R.id.bt_start);
 		df = new DecimalFormat("######0.0");
 	}

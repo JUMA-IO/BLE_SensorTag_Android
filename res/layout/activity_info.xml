@@ -39,14 +39,15 @@
                     android:layout_height="wrap_content"
                     android:text="Temperature:" />
 
-                <ProgressBar
-                    android:id="@+id/pb1"
+                <SeekBar
+                   android:id="@+id/pb1"
                     android:layout_weight="1"
-                    style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" 
                     android:max="100"
+                    android:thumb="@null"
                     android:progress="0" />
+
 
 
                 <TextView
@@ -71,14 +72,14 @@
                    android:layout_height="wrap_content"
                    android:text="RH:" />
 
-                <ProgressBar
-                    android:id="@+id/pb2"
+                   <SeekBar
+                   android:id="@+id/pb2"
                     android:layout_weight="1"
-                    style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" 
                     android:max="100"
-                    android:progress="0"/>
+                    android:thumb="@null"
+                    android:progress="0" />
 
                 <TextView
                     android:id="@+id/tv2"
@@ -103,13 +104,14 @@
                     android:layout_height="wrap_content"
                     android:text="Pressure:" />
 
-                <ProgressBar
-                    android:id="@+id/pb3"
+              
+                   <SeekBar
+                   android:id="@+id/pb3"
                     android:layout_weight="1"
-                    style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="wrap_content" 
                     android:max="1000"
+                    android:thumb="@null"
                     android:progress="0" />
 
                 <TextView
@@ -147,13 +149,13 @@
                     android:layout_height="wrap_content"
                     android:text="X:" />
 
-                <ProgressBar
-                    android:id="@+id/pb4"
+                   <SeekBar
+                   android:id="@+id/pb4"
                     android:layout_weight="1"
-                    style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="wrap_content" 
                     android:max="1000"
+                    android:thumb="@null"
                     android:progress="0" />
 
                 <TextView
@@ -178,14 +180,14 @@
                      android:layout_height="wrap_content"
                      android:text="Y:" />
 
-                 <ProgressBar
-                     android:id="@+id/pb5"
-                     android:layout_weight="1"
-                     style="?android:attr/progressBarStyleHorizontal"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content" 
-                     android:max="1000"
-                     android:progress="0"/>
+                   <SeekBar
+                   android:id="@+id/pb5"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:max="1000"
+                    android:thumb="@null"
+                    android:progress="0" />
 
                  <TextView
                      android:id="@+id/tv5"
@@ -208,14 +210,14 @@
                      android:layout_height="wrap_content"
                      android:text="Z:" />
 
-                 <ProgressBar
-                     android:id="@+id/pb6"
-                     android:layout_weight="1"
-                     style="?android:attr/progressBarStyleHorizontal"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:max="1000"
-                     android:progress="0" />
+                   <SeekBar
+                   android:id="@+id/pb6"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:max="1000"
+                    android:thumb="@null"
+                    android:progress="0" />
 
                  <TextView
                      android:id="@+id/tv6"
@@ -251,14 +253,14 @@
                      android:layout_height="wrap_content"
                      android:text="ax:" />
 
-                   <ProgressBar
-                       android:id="@+id/pb7"
-                       android:layout_weight="1"
-                       style="?android:attr/progressBarStyleHorizontal"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content" 
-                       android:max="40"
-                       android:progress="0"/>
+                      <SeekBar
+                   android:id="@+id/pb7"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:max="40"
+                    android:thumb="@null"
+                    android:progress="0" />
  
                    <TextView
                        android:id="@+id/tv7"
@@ -282,14 +284,14 @@
                      android:layout_height="wrap_content"
                      android:text="ay:" />
 
-                   <ProgressBar
-                       android:id="@+id/pb8"
-                       android:layout_weight="1"
-                       style="?android:attr/progressBarStyleHorizontal"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content" 
-                       android:max="40"
-                       android:progress="0"/>
+                    <SeekBar
+                   android:id="@+id/pb8"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:max="40"
+                    android:thumb="@null"
+                    android:progress="0" />
 
                    <TextView
                        android:id="@+id/tv8"
@@ -312,14 +314,14 @@
                      android:layout_height="wrap_content"
                      android:text="az:" />
 
-                   <ProgressBar
-                       android:id="@+id/pb9"
-                       android:layout_weight="1"
-                       style="?android:attr/progressBarStyleHorizontal"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:max="40"
-                       android:progress="0" />
+                   <SeekBar
+                   android:id="@+id/pb9"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:max="40"
+                    android:thumb="@null"
+                    android:progress="0" />
 
                    <TextView
                        android:id="@+id/tv9"
@@ -355,14 +357,14 @@
                      android:layout_height="wrap_content"
                      android:text="ωx:" />
 
-                   <ProgressBar
-                       android:id="@+id/pb10"
-                       android:layout_weight="1"
-                       style="?android:attr/progressBarStyleHorizontal"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:max="1000"
-                       android:progress="0" />
+                   <SeekBar
+                   android:id="@+id/pb10"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:max="1000"
+                    android:thumb="@null"
+                    android:progress="0" />
 
                    <TextView
                        android:id="@+id/tv10"
@@ -385,14 +387,14 @@
                      android:layout_height="wrap_content"
                      android:text="ωy:" />
 
-                   <ProgressBar
-                       android:id="@+id/pb11"
-                       android:layout_weight="1"
-                       style="?android:attr/progressBarStyleHorizontal"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:max="1000"
-                       android:progress="0" />
+                  <SeekBar
+                   android:id="@+id/pb11"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:max="1000"
+                    android:thumb="@null"
+                    android:progress="0" />
 
                    <TextView
                        android:id="@+id/tv11"
@@ -415,14 +417,14 @@
                      android:layout_height="wrap_content"
                      android:text="ωz:" />
 
-                   <ProgressBar
-                       android:id="@+id/pb12"
-                       android:layout_weight="1"
-                       style="?android:attr/progressBarStyleHorizontal"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:max="1000"
-                       android:progress="0" />
+                   <SeekBar
+                   android:id="@+id/pb12"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:max="1000"
+                    android:thumb="@null"
+                    android:progress="0" />
 
                    <TextView
                        android:id="@+id/tv12"
