@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
-import com.juma.stsensor.R;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.BroadcastReceiver;
@@ -15,7 +13,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -42,7 +39,6 @@ public class CustomDialog extends Dialog implements android.view.View.OnClickLis
 
 	public CustomDialog(Context context) {
 		super(context);
-        Log.e("null", "");
 		this.context = context;
 	}
 	 public CustomDialog(Context context, int theme){
@@ -169,7 +165,6 @@ public class CustomDialog extends Dialog implements android.view.View.OnClickLis
 
 		@Override
 		public void onReceive(Context context, Intent intent) {
-			Log.e("rrrrrrrr", "");
 			String uuid = intent.getStringExtra("uuid");
 			String name = intent.getStringExtra("name");
 			int rssi = intent.getIntExtra("rssi", 0);
@@ -177,7 +172,7 @@ public class CustomDialog extends Dialog implements android.view.View.OnClickLis
 
 		}
 	};
-
+	private boolean addDevice = true;
 	private void addDeviceInfo(String name, String uuid, int rssi){
 
 		if(deviceInfo != null && lvDeviceAdapter != null){
@@ -186,8 +181,19 @@ public class CustomDialog extends Dialog implements android.view.View.OnClickLis
 			map.put("uuid", uuid);
 			map.put("rssi", rssi);
 
+			for(int i=0;i<deviceInfo.size();i++){
+				if(deviceInfo.get(i).get("uuid").equals(map.get("uuid"))){
+					deviceInfo.add(i+1, map);
+					deviceInfo.remove(i);
+					addDevice = false;
+					break;
+				}
+			}
+			if(addDevice){
 			deviceInfo.add(map);
-
+			}
+			addDevice = true;
+			
 			lvDeviceAdapter.notifyDataSetChanged();
 
 		}

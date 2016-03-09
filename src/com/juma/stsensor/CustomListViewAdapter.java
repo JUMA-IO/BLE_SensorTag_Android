@@ -3,8 +3,6 @@ package com.juma.stsensor;
 import java.util.HashMap;
 import java.util.List;
 
-import com.juma.stsensor.R;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
